@@ -1,0 +1,454 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Interview test: Friend management</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Icomoon Icon Fonts-->
+
+	<!-- Modernizr JS -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.w3-btn {margin-bottom:10px;}
+</style>
+	</head>
+	<body>
+
+
+
+
+
+
+<!-- First Grid: Logo & About -->
+<div class="w3-row">
+  <div class="w3-half w3-black w3-container " style="height:1000px">
+    <!-- left -->
+    <div class="w3-padding-64 inline-block" style='width: 10%; '>
+    	<div class="w3-sidebar w3-bar-block w3-black" style="padding-top: 8%">
+  			<button id="connect-sidebar" class="w3-bar-item w3-button w3-hover-red">Connect two persons</button>
+  			<button id="retrieve-sidebar" class="w3-bar-item w3-button w3-hover-red">Retrieve friends</button>
+ 		 	<button id="common-sidebar" class="w3-bar-item w3-button w3-hover-red">Find common</button>
+  			<button id="follow-sidebar" class="w3-bar-item w3-button w3-hover-red">Follow</button>
+  			<button id="block-sidebar" class="w3-bar-item w3-button w3-hover-red">Block</button>
+  			<button id="message-sidebar" class="w3-bar-item w3-button w3-hover-red">Message</button>
+		</div>
+
+    </div>
+    <!-- right -->
+
+
+    <!-- Connect -->
+    <div id='connect-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='connect-sidebar-requestor'>
+
+        <div class='w3-padding-16 w3-left-align'>
+    	<span>Target</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='connect-sidebar-target'>
+    <div class='w3-padding-64 w3-left-align'>
+    <button class="w3-button w3-white w3-border w3-padding-16" id='connect'>connnect</button>
+</div>
+    </div>
+
+        <!-- Retrieve -->
+    <div id='retrieve-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;display:none'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='retrieve-sidebar-requestor'>
+    <div class='w3-padding-64 w3-left-align'>
+    <button class="w3-button w3-white w3-border w3-padding-16" id='retrieve'>Retrieve</button>
+</div>
+    </div>
+
+            <!-- Find common -->
+    <div id='common-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;display:none'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='common-sidebar-requestor'>
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Target</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='common-sidebar-target'>
+    <div class='w3-padding-64 w3-left-align'>
+    <button class="w3-button w3-white w3-border w3-padding-16" id='common'>Find common</button>
+    </div></div>
+
+
+
+            <!-- Follow -->
+    <div id='follow-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;display:none'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='follow-sidebar-requestor'>
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Target</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='follow-sidebar-target'>
+    <div class='w3-padding-64 w3-left-align'>
+    <button class="w3-button w3-white w3-border w3-padding-16" id='follow'>Follow</button>
+    </div></div>
+
+
+
+
+            <!-- Block -->
+    <div id='block-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;display:none'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='block-sidebar-requestor'>
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Target</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='block-sidebar-target'>
+    <div class='w3-padding-64 w3-left-align'>
+    <button class="w3-button w3-white w3-border w3-padding-16" id='block'>Block</button>
+    </div></div>
+
+
+
+
+            <!-- Message -->
+    <div id='message-div' class="w3-padding-64 w3-inline-block" style='width: 70%; float:right; padding-right: 5%;display:none'>
+
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Requestor</span>
+    </div>
+    <input class="w3-input w3-white w3-border w3-round-large" type="text" id='message-sidebar-sender'>
+    <div class='w3-padding-16 w3-left-align'>
+    	<span>Text</span>
+    </div>
+    <textarea class="w3-input w3-white w3-border w3-round-large" id='message-sidebar-text'></textarea>
+    <div class='w3-padding-64 w3-left-align'>
+    	<button class="w3-button w3-white w3-border" id='message'>Post the message</button>
+	</div>
+    </div>
+
+
+  </div>
+
+
+
+
+<!-- Server log-->
+  <div class="w3-half w3-blue-grey w3-container" style="height:1000px">
+    <div class="w3-padding-64 w3-center">
+      <h1>Server Log</h1>
+
+      <div class="w3-left-align w3-padding-large">
+        <p>Data sent to server</p>
+        <div  class='w3-white' id='send' style="background-color:white;height:200px;width: 880px;"></div>
+        <p>Data received from server</p>
+        <div  class='w3-white' id='receive' style="background-color:white;height:500px;width: 880px;">
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<!-- <div>
+	
+	<p>API response display:</p>
+	<br>
+<p>Data sent to server:
+	<span id='send' rows="6" cols="20">
+		
+	</span>
+<br>
+<p>Data received from server:
+	<span id='receive'>
+		
+	</span>
+
+</div> -->
+
+
+
+
+
+
+
+
+<!-- <div>	
+	<input id="requestor" type='text' placeholder="Enter requestor">
+	<br>
+	<input id="target" type='text' placeholder="Enter target">	
+	<br>
+	<input id="sender" type='text' placeholder="Enter sender">	
+	<br>
+	<input id="text" type='text' placeholder="Enter text">	
+	<button id='connect' >Connect</button>
+	<button id='update' >Update</button>
+	<button id='retrieve' >Retrieve</button>
+	<button id='common' >Common</button>
+	<button id='follow' >Follow</button>
+	<button id='block' >Block</button>
+	<button id='message' >Message</button>
+</div>
+<br><br>
+
+<div>
+	
+	<p>All persons:</p>
+	<ul id='update-list'>
+		{% include "partial.html" %}
+	</ul>
+
+
+</div>
+<br><br> -->
+
+	
+	
+	<script>
+	
+ $('#connect').on('click',function(){
+		var para = [$('#connect-sidebar-requestor').val(),$('#connect-sidebar-target').val()]
+		
+		$.ajax({
+			type:"POST",
+			dataType: "json",
+			url: '../connect/',
+			data:{
+				'friends':para
+			},
+			success: function(result){
+				$('#send').html(JSON.stringify({'friends':para}))
+				$('#receive').html(JSON.stringify(result))
+
+			},
+			error: function(xhr,thrownError){
+				alert(thrownError)
+			}
+		});
+
+	
+});
+
+
+  $('#retrieve').on('click',function(){
+  		var para = $('#retrieve-sidebar-requestor').val()
+		$.ajax({
+			type:"POST",
+			url: '../retrieve/',
+			data:{
+				'email': para
+			},
+			success: function(result){
+				document.getElementById("send").innerHTML =JSON.stringify({'email':para});
+				document.getElementById("receive").innerHTML =JSON.stringify(result);
+			},
+
+		});
+
+	
+});
+
+  $('#common').on('click',function(){
+  		var para = [$('#common-sidebar-requestor').val(),$('#common-sidebar-target').val()]
+		$.ajax({
+			type:"POST",
+			url: '../common/',
+			data:{
+				'friends': para
+			},
+			success: function(result){
+				$('#send').html(JSON.stringify({'firends':para}))
+				$('#receive').html(JSON.stringify(result))
+			},
+
+		});
+
+	
+});
+
+
+  $('#follow').on('click',function(){
+		$.ajax({
+			type:"POST",
+			url: '../follow/',
+			data:{
+				'requestor': $('#follow-sidebar-requestor').val(),
+				'target': $('#follow-sidebar-target').val(),
+			},
+			success: function(result){
+				$('#send').html(JSON.stringify({'requestor':$('#follow-sidebar-requestor').val(), 'target':$('#follow-sidebar-target').val()}))
+				$('#receive').html(JSON.stringify(result))
+			},
+
+		});
+
+	
+});
+
+
+  $('#block').on('click',function(){
+		$.ajax({
+			type:"POST",
+			url: '../block/',
+			data:{
+				'requestor': $('#block-sidebar-requestor').val(),
+				'target': $('#block-sidebar-target').val(),
+			},
+			success: function(result){
+				$('#send').html(JSON.stringify({'requestor':$('#block-sidebar-requestor').val(), 'target':$('#block-sidebar-target').val()}))
+				$('#receive').html(JSON.stringify(result))
+			},
+
+		});
+
+	
+});
+
+    $('#message').on('click',function(){
+		$.ajax({
+			type:"POST",
+			url: '../message/',
+			data:{
+				'sender': $('#message-sidebar-sender').val(),
+				'text': $('#message-sidebar-text').val(),
+			},
+			success: function(result){
+				$('#send').html(JSON.stringify({'requestor':$('#message-sidebar-sender').val(), 'target':$('#message-sidebar-text').val()}))
+				$('#receive').html(JSON.stringify(result))
+			},
+
+		});
+
+	
+});
+
+
+  $('#update').on('click',function(){
+
+		$.ajax({
+			type:"GET",
+			url: '../index/',
+			success: function(result){
+				$('#update-list').empty()
+				$('#update-list').append(result)
+			},
+
+		});
+
+	
+});
+
+
+
+$('#connect-sidebar').on('click',function(){
+    $('#connect-div').show()
+    $('#retrieve-div').hide()
+    $('#common-div').hide()
+    $('#follow-div').hide()
+    $('#block-div').hide()
+    $('#message-div').hide()
+});
+
+$('#retrieve-sidebar').on('click',function(){
+    $('#connect-div').hide()
+    $('#retrieve-div').show()
+    $('#common-div').hide()
+    $('#follow-div').hide()
+    $('#block-div').hide()
+    $('#message-div').hide()
+});
+$('#common-sidebar').on('click',function(){
+    $('#connect-div').hide()
+    $('#retrieve-div').hide()
+    $('#common-div').show()
+    $('#follow-div').hide()
+    $('#block-div').hide()
+    $('#message-div').hide()
+});
+
+$('#follow-sidebar').on('click',function(){
+    $('#connect-div').hide()
+    $('#retrieve-div').hide()
+    $('#common-div').hide()
+    $('#follow-div').show()
+    $('#block-div').hide()
+    $('#message-div').hide()
+});
+$('#block-sidebar').on('click',function(){
+    $('#connect-div').hide()
+    $('#retrieve-div').hide()
+    $('#common-div').hide()
+    $('#follow-div').hide()
+    $('#block-div').show()
+    $('#message-div').hide()
+});
+
+$('#message-sidebar').on('click',function(){
+    $('#connect-div').hide()
+    $('#retrieve-div').hide()
+    $('#common-div').hide()
+    $('#follow-div').hide()
+    $('#block-div').hide()
+    $('#message-div').show()
+});
+
+
+
+	
+	
+	
+	</script>
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
